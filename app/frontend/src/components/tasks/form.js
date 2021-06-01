@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { addTask } from '../../actions/tasks';
+import Button from 'react-bootstrap/Button';
 
 function Form(props) {
     const [title, setTitle] = useState('');
@@ -9,20 +10,22 @@ function Form(props) {
 
     Form.propTypes = {
         addTask: PropTypes.func.isRequired,
+        set: PropTypes.func.isRequired
     };
     const handleSubmit = (e) => {
         e.preventDefault();
         const task = { title, description };
         props.addTask(task);
-        console.log("submit");
+        props.set(0);
+
         setTitle('');
         setDescription('');
 
     }
 
     return (
-        <div className="card card-body mt-4 mb-4">
-            <h2>Add Task`</h2>
+        <div className="card card-body mt-4 mb-4" style={{ marginTop: "10px", boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.1)" }}>
+            <h2>Add Task</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Title</label>
@@ -44,9 +47,10 @@ function Form(props) {
                     />
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary">
-                        Add
-            </button>
+
+                    <Button type="submit" style={{ marginRight: "16px" }} variant="primary">Add </Button>
+
+                    <Button variant="outline-secondary" onClick={() => { props.set(0) }}>Cancel</Button>
                 </div>
             </form>
         </div>
