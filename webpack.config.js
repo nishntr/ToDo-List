@@ -2,26 +2,30 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
- entry: path.resolve(__dirname, 'app/frontend/src/index.js'),
- output: {
-   path: path.join(__dirname, 'app/frontend/static/frontend'),
-   filename: 'main.js'
- },
-  
+  entry: path.resolve(__dirname, 'app/frontend/src/index.js'),
+  output: {
+    path: path.join(__dirname, 'app/frontend/static/frontend'),
+    filename: 'main.js'
+  },
+
   // Rules of how webpack will take our files, complie & bundle them for the browser 
- module: {
+  module: {
     rules: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use:{
-                loader:'babel-loader'
-            }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ]
- },
- resolve: {
+  },
+  resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
-//  plugins: [new HtmlWebpackPlugin({ template: 'app/frontend/templates/frontend/index.html' })],
+  //  plugins: [new HtmlWebpackPlugin({ template: 'app/frontend/templates/frontend/index.html' })],
 }
