@@ -15,7 +15,7 @@ export default function dashboard() {
                 add === 0 ?
                     < >
                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <Button variant="dark" onClick={() => setAdd(1)}>Add</Button>
+                            <Button className="button" variant="dark" onClick={() => setAdd(1)}>Add</Button>
                         </div>
                         <Tasks />
                     </>

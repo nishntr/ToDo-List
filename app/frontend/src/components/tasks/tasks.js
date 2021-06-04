@@ -30,7 +30,7 @@ function Tasks(props) {
     return (
         <div >
             <Table striped variant="dark" borderless hover
-                style={{ border: "1px solid", marginTop: "10px", boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.1)" }}>
+                style={{ border: "1px solid", marginTop: "30px", boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.1)" }}>
                 <thead style={{ fontFamily: "Lucida Console" }}>
                     <tr>
                         <th>Title</th>
