@@ -1,9 +1,10 @@
 from .models import Task
-from rest_framework import viewsets,permissions
+from rest_framework import viewsets, permissions
 from .serializers import TaskSerializer
 
+
 class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
+    queryset = Task.objects.all().order_by('-created')
     permission_classes = [
         permissions.AllowAny
     ]
