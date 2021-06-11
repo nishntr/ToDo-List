@@ -95,20 +95,3 @@ function delIcon() {
         </svg>
     )
 }
-
-// class Tasks extends Component {
-//     static propTypes = {
-//         tasks: PropTypes.array.isRequired,
-//         getTasks: PropTypes.func.isRequired,
-//     };
-//     componentDidMount() {
-//         this.props.getTasks();
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 Task
-//             </div>
-//         )
-//     }
-// }

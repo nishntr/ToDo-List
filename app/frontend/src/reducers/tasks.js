@@ -1,4 +1,4 @@
-import { GetTasks, DeleteTask, AddTask, UpdateTask } from "../actions/types.js";
+import { GetTasks, DeleteTask, AddTask, UpdateTask, LogoutSuccess } from "../actions/types.js";
 
 const initialState = {
     tasks: [],
@@ -29,6 +29,11 @@ export default function (state = initialState, action) {
                 ...state,
                 tasks: state.tasks
 
+            }
+        case LogoutSuccess:
+            return {
+                ...state,
+                tasks: []
             }
         default:
             return state;

@@ -18,7 +18,9 @@
     border-color: rgb(255,102,203);
   } 
 
-
+Link{
+  color:aliceblue;
+}
 
   @media(max-width: 640px) {
     .menuIcon {
